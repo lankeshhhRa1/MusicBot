@@ -111,9 +111,9 @@ async def lodu(_, message: Message):
 async def kaisa_hai_bhai(_, message: Message):
     await message.reply_text("Lawde Lage Hai jindagi k")
 
-@Client.on_message(command("queue mai kitne songs hai ?") & other_filters)
+@Client.on_message(command("queue mai kitne gaane hai ?") & other_filters)
 async def song(_, message: Message):
-    await message.reply_text("Bhai abhi queue mai "{await callsmusic.queues.put(message.chat.id, file_path=file_path)}!" songs hai")
+    await message.reply_text(f"**{bn} :-** 😉 Queue mai abhi {await callsmusic.queues.put(message.chat.id, file_path=file_path)} gaane hai")
 
 @Client.on_message(command("join/leave spam") & other_filters)
 async def spam(_, message: Message):
