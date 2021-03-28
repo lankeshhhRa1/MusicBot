@@ -67,10 +67,10 @@ async def loop(_, message: Message):
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         await message.reply_text(f"**{bn} :-** 😉 is gaane k baad 3 baar bajaunga #{await callsmusic.queues.put(message.chat.id, file_path=file_path)}!")
-        callsmusic.queues.put(message.chat.id, file_path=file_path)
-        callsmusic.queues.put(message.chat.id, file_path=file_path)
+        await callsmusic.queues.put(message.chat.id, file_path=file_path)
+        await callsmusic.queues.put(message.chat.id, file_path=file_path)
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_text(f"**{bn} :-** 🥳 OK BHAI BAJATA HU 3 baar")
-    callsmusic.queues.put(message.chat.id, file_path=file_path)
-    callsmusic.queues.put(message.chat.id, file_path=file_path)
+    await callsmusic.queues.put(message.chat.id, file_path=file_path)
+    await callsmusic.queues.put(message.chat.id, file_path=file_path)
