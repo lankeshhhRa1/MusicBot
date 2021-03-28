@@ -42,3 +42,35 @@ async def play(_, message: Message):
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_text(f"**{bn} :-** 🥳 OK BHAI BAJATA HU...")
+
+@Client.on_message(command("loop") & other_filters)
+@errors
+async def loop(_, message: Message):
+    audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
+    url = get_url(message)
+
+    if audio:
+        if round(audio.duration / 60) > DURATION_LIMIT:
+            raise DurationLimitError(
+                f"**{bn} :-** 😕 Videos longer than {DURATION_LIMIT} minute(s) aren't allowed!\n🤐 The provided video is {audio.duration / 60} minute(s)"
+            )
+
+        file_name = get_file_name(audio)
+        file_path = await converter.convert(
+            (await message.reply_to_message.download(file_name))
+            if not path.isfile(path.join("downloads", file_name)) else file_name
+        )
+    elif url:
+        file_path = await converter.convert(youtube.download(url))
+    else:
+        return await message.reply_text(f"**{bn} :-** 🙄 BSDK KUCH DE TOH SAHI PLAY KRRNE KO!")
+
+    if message.chat.id in callsmusic.pytgcalls.active_calls:
+        await message.reply_text(f"**{bn} :-** 😉 is gaane k baad 3 baar bajaunga #{await callsmusic.queues.put(message.chat.id, file_path=file_path)}!")
+        callsmusic.queues.put(message.chat.id, file_path=file_path)
+        callsmusic.queues.put(message.chat.id, file_path=file_path)
+    else:
+        callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
+        await message.reply_text(f"**{bn} :-** 🥳 OK BHAI BAJATA HU 3 baar")
+         callsmusic.queues.put(message.chat.id, file_path=file_path)
+         callsmusic.queues.put(message.chat.id, file_path=file_path)
