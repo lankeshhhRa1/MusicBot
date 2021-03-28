@@ -1,4 +1,19 @@
 from asyncio.queues import QueueEmpty
+from os import path
+
+from pyrogram import Client
+from pyrogram.types import Message, Voice
+
+import callsmusic
+
+import converter
+from downloaders import youtube
+
+from config import BOT_NAME as bn, DURATION_LIMIT
+from helpers.filters import command, other_filters
+from helpers.decorators import errors
+from helpers.errors import DurationLimitError
+from helpers.gets import get_url, get_file_name
 
 from pyrogram import Client
 from pyrogram.types import Message
@@ -95,3 +110,34 @@ async def lodu(_, message: Message):
 @Client.on_message(command("kaisa hai bhai") & other_filters)
 async def kaisa_hai_bhai(_, message: Message):
     await message.reply_text("Lawde Lage Hai jindagi k")
+
+@Client.on_message(command("queue mai kitne songs hai ?") & other_filters)
+async def song(_, message: Message):
+    await message.reply_text("Bhai abhi queue mai "{await callsmusic.queues.put(message.chat.id, file_path=file_path)}!" songs hai")
+
+@Client.on_message(command("join/leave spam") & other_filters)
+async def spam(_, message: Message):
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    callsmusic.pytgcalls.leave_group_call(chat_id)
+    callsmusic.pytgcalls.join_group_call(chat_id)
+    await message.reply_text("chal bahut hua aab")
+    
+
+
