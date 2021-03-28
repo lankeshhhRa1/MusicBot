@@ -30,6 +30,10 @@ async def resume(_, message: Message):
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
+    await message.reply_text(f"**{BN} :-** Pakka Bhai ??")
+    @Client.on_message(command("Ha") & other_filters)
+    async def Ha(_, message: Message):
+        await message.reply_text(f"**{BN} :-** Thik Hai Fir , sala meri jaroorat hi nhi kisiko :(")
         try:
             callsmusic.queues.clear(message.chat.id)
         except QueueEmpty:
@@ -91,4 +95,7 @@ async def gandu(_, message: Message):
 async def lodu(_, message: Message):
     await message.reply_text("Tu LOdu hai mc , sudhar ja gaali mat de")
 
+@Client.on_message(command("kaisa_hai_bhai") & other_filters)
+async def kaisa_hai_bhai(_, message: Message):
+    await message.reply_text("Lawde Lage Hai jindagi k")
 
