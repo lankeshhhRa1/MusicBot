@@ -71,23 +71,23 @@ async def ShubhamBhagatKyaHai(_, message: Message):
 async def NeemKaPattaKadwaHai(_, message: Message):
     await message.reply_text("Vaibhav Dahiya Bhadwa Hai")
 
-@Client.on_message("bsdk" & other_filters)
+@Client.on_message(command("bsdk") & other_filters)
 async def bsdk(_, message: Message):
     await message.reply_text("Tu bsdka , Tera Baap bsdka , Tera Dada bsdka")
 
-@Client.on_message("mc" & other_filters)
+@Client.on_message(command("mc") & other_filters)
 async def mc(_, message: Message):
     await message.reply_text("Tu maderchod , Tera Baap maderchod , Tera Dada bhi mc")
 
-@Client.on_message("bc" & other_filters)
+@Client.on_message(command("bc") & other_filters)
 async def bc(_, message: Message):
     await message.reply_text("Tu bhenchod , Tera Baap bhenchod , Tera Dada bhi bhenchod")
 
-@Client.on_message("gandu" & other_filters)
+@Client.on_message(command("gandu") & other_filters)
 async def gandu(_, message: Message):
     await message.reply_text("JO bolta hai wahi hota hai , aap hi gandu ho")
 
-@Client.on_message("lodu" & other_filters)
+@Client.on_message(command("lodu") & other_filters)
 async def lodu(_, message: Message):
     await message.reply_text("Tu LOdu hai mc , sudhar ja gaali mat de")
 
