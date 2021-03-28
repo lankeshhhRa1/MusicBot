@@ -21,7 +21,7 @@ async def rok(_, message: Message):
 @Client.on_message(command("fir chala") & other_filters)
 @errors
 @authorized_users_only
-async def fir chala(_, message: Message):
+async def fir(_, message: Message):
         callsmusic.pytgcalls.resume_stream(message.chat.id)
         await message.reply_text(f"**{BN} :-** 🥳 Fir CHala DIA vro!")
 
