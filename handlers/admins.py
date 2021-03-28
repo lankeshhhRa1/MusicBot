@@ -16,7 +16,7 @@ from helpers.decorators import errors, authorized_users_only
 async def pause(_, message: Message):
         callsmusic.pytgcalls.pause_stream(message.chat.id)
         await message.reply_text(f"**{BN} :-** 🤐 ROK DIYA!")
-
+        
 
 @Client.on_message(command("resume") & other_filters)
 @errors
@@ -30,10 +30,7 @@ async def resume(_, message: Message):
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
-    await message.reply_text(f"**{BN} :-** Pakka Bhai ??")
-    @Client.on_message(command("Ha") & other_filters)
-    async def Ha(_, message: Message):
-        await message.reply_text(f"**{BN} :-** Thik Hai Fir , sala meri jaroorat hi nhi kisiko :(")
+        await message.reply_text(f"**{BN} :-** Thik Hai Fir , sala meri jaroorat hi nhi kisiko ")
         try:
             callsmusic.queues.clear(message.chat.id)
         except QueueEmpty:
@@ -48,9 +45,8 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
         callsmusic.queues.task_done(message.chat.id)
-
-        if callsmusic.queues.is_empty(message.chat.id):
-            await message.reply_text("Are bhai queue empty hai,kuch de toh sahi bjane ko")
+            if callsmusic.queues.is_empty(message.chat.id):
+                return
         else:
             callsmusic.pytgcalls.change_stream(
                 message.chat.id,
