@@ -46,7 +46,7 @@ async def stop(_, message: Message):
 async def skip(_, message: Message):
         callsmusic.queues.task_done(message.chat.id)
             if callsmusic.queues.is_empty(message.chat.id):
-                return
+               callsmusic.pytgcalls.join_group_call(message.chat.id)
         else:
             callsmusic.pytgcalls.change_stream(
                 message.chat.id,
