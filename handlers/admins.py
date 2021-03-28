@@ -96,3 +96,6 @@ async def lodu(_, message: Message):
 async def kaisa_hai_bhai(_, message: Message):
     await message.reply_text("Lawde Lage Hai jindagi k")
 
+@Client.on_message(other_filters)
+async def op(_, message: Message):
+    await message.reply_text("Oye Tu Meri Baat Sun @Lankesh_Ravan_Official OP ")
