@@ -111,28 +111,16 @@ async def lodu(_, message: Message):
 async def kaisa_hai_bhai(_, message: Message):
     await message.reply_text("Lawde Lage Hai jindagi k")
 
-@Client.on_message(command("join/leave spam") & other_filters)
-async def spam(_, message: Message):
-    x=message.chat.id
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
-    callsmusic.pytgcalls.leave_group_call(x)
-    callsmusic.pytgcalls.join_group_call(x)
+@Client.on_message(command("Madhav") & other_filters)
+async def madhav(_, message: Message):
+    await message.reply_text("naam mat le us bsdiwale ka")
+    await message.edit_text("naam mat le us bsdiwale ka dobara liya toh gand tod dunga bsdk")
+    await message.reply_text("Samjha??")
 
+@Client.on_message(command("Ha") & other_filters)
+async def ha(_, message: Message):
+    await message.reply_text("THIK HAI")
 
-    await message.reply_text("chal bhut hua aab")
     
 
 
