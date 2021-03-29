@@ -114,7 +114,7 @@ async def kaisa_hai_bhai(_, message: Message):
 @Client.on_message(command("Madhav") & other_filters)
 async def madhav(_, message: Message):
     await message.reply_text("naam mat le us bsdiwale ka")
-    await message.edit_text("naam mat le us bsdiwale ka dobara liya toh gand tod dunga bsdk")
+    await message.reply_text("naam mat le us bsdiwale ka dobara liya toh gand tod dunga bsdk")
     await message.reply_text("Samjha??")
 
 @Client.on_message(command("Ha") & other_filters)
