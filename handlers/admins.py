@@ -71,10 +71,6 @@ async def skip(_, message: Message):
 
             await message.reply_text(f"**{BN} :-** 😬 Skip Krr Diya!")
 
-@Client.on_message(command("Ravan") & other_filters)
-async def Ravan(_, message: Message):
-    await message.reply_text("KYA HUA SIR,AAB KYA KIYA MAINE ?")
-
 @Client.on_message(command("Kisne Banaya Tujhe ?") & other_filters)
 async def KisneBanayaTujhe(_, message: Message):
     await message.reply_text("@Lankesh_Ravan_Official SIR NE :))")
@@ -124,12 +120,32 @@ async def ha(_, message: Message):
 
 @Client.on_message(command("spam") & other_filters)
 async def spamop(_, message: Message):
-    await message.reply_text("spam OP bolte")
-    await message.reply_text("spam OP bolte")
-    await message.reply_text("spam OP bolte")
-    await message.reply_text("spam OP bolte")
-    await message.reply_text("spam OP bolte")
-    await message.reply_text("spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
+    await message.reply_text("Ravan spam OP bolte")
 
+@Client.on_message(command("Ravan") & other_filters)
+async def spamopp(_, message: Message):
+    await message.reply_text("spam BY Ravan OP bolte")
+    await message.reply_text("spam BY Ravan OP bolte")
+    await message.reply_text("spam BY Ravan OP bolte")
+    await message.reply_text("spam BY Ravan OP bolte")
+    await message.reply_text("spam BY Ravan OP bolte")
+    await message.reply_text("spam BY Ravan OP bolte")
 
+@Client.on_message(command("Gali spam") & other_filters)
+async def spamoop(_, message: Message):
+    await message.reply_text("Shubham mc")
+    await message.reply_text("vaibhav lodu")
+    await message.reply_text("bhadwwwaa madhav")
 
+@Client.on_message(command("Shubham mc") & other_filters)
+async def spammopp(_, message: Message):
+    await message.reply_text("Gali spam")
+    await message.reply_text("Shubham mc")
+    await message.reply_text("vaibhav lodu")
+    await message.reply_text("bhadwwwaa madhav")
+    
