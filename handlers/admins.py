@@ -121,6 +121,15 @@ async def madhav(_, message: Message):
 async def ha(_, message: Message):
     await message.reply_text("THIK HAI")
 
-    
+
+@Client.on_message(command("spam") & other_filters)
+async def spamop(_, message: Message):
+    await message.reply_text("spam OP bolte")
+    await message.reply_text("spam OP bolte")
+    await message.reply_text("spam OP bolte")
+    await message.reply_text("spam OP bolte")
+    await message.reply_text("spam OP bolte")
+    await message.reply_text("spam OP bolte")
+
 
 
